@@ -18,8 +18,10 @@
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @property (nonatomic) NSIndexPath *selectedItemIndexPath;
+@property (nonatomic) boolean_t bEditMode;
 
 
+- (IBAction)editButtonPressed:(id)sender;
 - (void) handleLongGesture:(UILongPressGestureRecognizer*) gesture;
 
 @end

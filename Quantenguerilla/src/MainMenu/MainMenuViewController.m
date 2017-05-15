@@ -22,11 +22,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    _bEditMode = false;
+    
     _mainmenu = [[MainMenu alloc]init];
     [_mainmenu loadProjects];
+    
     [self initCollectionView];
     [self initGestureRecognizer];
-    
 }
 
 
@@ -96,7 +98,7 @@
     UICollectionViewCell *cell;
     
     if(_mainmenu.projects == nil) {
-        [NSException raise:@"Invalid operation - _mainmenu.projects is undefined" format:@"Invalid operation - _mainmenu.projects is undefined"];
+        [NSException raise:@"MainMenuViewController: Invalid operation - _mainmenu.projects is undefined" format:@"Invalid operation - _mainmenu.projects is undefined"];
     }
     
     if([indexPath row] >= [_mainmenu.projects count]) {
@@ -177,7 +179,7 @@
 - (UIImageView *)transitionSourceImageView
 {
     if(_selectedItemIndexPath) {
-        [NSException raise:@"Invalid operation - no valid item selected" format:@"Invalid operation - no valid item selected"];
+        [NSException raise:@"MainMenuViewController: Invalid operation - no valid item selected" format:@"Invalid operation - no valid item selected"];
     }
     //NSIndexPath *selectedIndexPath = [_menuGridCollectionView indexPathForItemAtPoint:_selectedItemPosition];
     //ImageTableViewCell *cell = (ImageTableViewCell *)[self.tableView cellForRowAtIndexPath:selectedIndexPath];
@@ -247,31 +249,36 @@
 
 
 
-#pragma mark - overwite gesture recognizer
+#pragma mark - gesture recognizer
 
 // open project / new project:
 - (void) handleTapGesture:(UITapGestureRecognizer*) gesture {
+    
     if(gesture.state == UIGestureRecognizerStateEnded) {
-        // open project workspace
         
         NSIndexPath *indexPath = [_menuGridCollectionView indexPathForItemAtPoint:[gesture locationInView:_menuGridCollectionView]];
         _selectedItemIndexPath = indexPath;
         
-        // todo - check which cell was tapped
-        if(indexPath.row < [_mainmenu.projects count]) {
-            // load workspace
-            [self performSegueWithIdentifier:@"workspaceSegue" sender:indexPath];
+        if(_bEditMode) {
+            
+            
+            
         } else {
-            // new workspace
-            [self performSegueWithIdentifier:@"newWorkspaceSegue" sender:indexPath];
+            // open project workspace
+            // check which cell was tapped
+            if(indexPath.row < [_mainmenu.projects count]) {
+                // load workspace
+                [self performSegueWithIdentifier:@"workspaceSegue" sender:indexPath];
+            } else {
+                // new workspace
+                [self performSegueWithIdentifier:@"newWorkspaceSegue" sender:indexPath];
+            }
         }
-        
         
     }
     
 }
 
-// reorder cells:
 - (void) handleLongGesture:(UILongPressGestureRecognizer*) gesture {
     
     switch(gesture.state) {
@@ -280,18 +287,21 @@
             
                 NSIndexPath *indexPath = [_menuGridCollectionView indexPathForItemAtPoint:[gesture locationInView:_menuGridCollectionView]];
             
-            
-                // forbid item being last element ('+' always!!!)
-                if(indexPath &&(indexPath.row < [_mainmenu.projects count])) {
+                if(_bEditMode) {
+                    // forbid item being last element ('+' always!!!)
+                    if(indexPath &&(indexPath.row < [_mainmenu.projects count])) {
                     
-                    NSLog(@"MainMenuViewController: start dragging element");
-                    [_menuGridCollectionView beginInteractiveMovementForItemAtIndexPath:indexPath];
-                    _mainmenu.dndIndex = indexPath.row;
+                        NSLog(@"MainMenuViewController: start dragging element");
+                        [_menuGridCollectionView beginInteractiveMovementForItemAtIndexPath:indexPath];
+                        _mainmenu.dndIndex = indexPath.row;
+                    } else {
+                    
+                        NSLog(@"MainMenuViewController: invalid element for drag & drop actions");
+                        [_menuGridCollectionView cancelInteractiveMovement];
+                        break;
+                    }
                 } else {
                     
-                    NSLog(@"MainMenuViewController: invalid element for drag & drop actions");
-                    [_menuGridCollectionView cancelInteractiveMovement];
-                    break;
                 }
             }
             break;
@@ -301,12 +311,10 @@
                 if(_mainmenu.dndIndex >= [_mainmenu.projects count]) {
                     break;
                 }
-                //NSIndexPath *indexPath = [_menuGridCollectionView indexPathForItemAtPoint:[gesture locationInView:_menuGridCollectionView]];
             
-                // forbid item being last element ('+' always!!!)
-                //if(indexPath && (indexPath.row < [_mainmenu.projects count])) {
+                if(_bEditMode) {
                     [_menuGridCollectionView updateInteractiveMovementTargetPosition:[gesture locationInView:gesture.view]];
-                //}
+                }
             }
             break;
         
@@ -318,27 +326,31 @@
             
                 NSIndexPath *indexPath = [_menuGridCollectionView indexPathForItemAtPoint:[gesture locationInView:_menuGridCollectionView]];
             
-                // forbid item being last element ('+' always!!!)
-                if(indexPath && (indexPath.row < [_mainmenu.projects count])) {
-                    NSLog(@"MainMenuViewController: dropped at new position");
-                    _mainmenu.dndTarget = indexPath.row;
-                    [_mainmenu reorderProjects];
-                    [_menuGridCollectionView endInteractiveMovement];
+                if(_bEditMode) {
+                    if(indexPath && (indexPath.row < [_mainmenu.projects count])) {
+                        NSLog(@"MainMenuViewController: dropped at new position");
+                        _mainmenu.dndTarget = indexPath.row;
+                        [_mainmenu reorderProjects];
+                        [_menuGridCollectionView endInteractiveMovement];
+                    } else {
+                        NSLog(@"MainMenuViewController: drag & drop canceled - invalid position");
+                        [_menuGridCollectionView cancelInteractiveMovement];
+                    }
+                    _mainmenu.dndIndex=-1;
+                    _mainmenu.dndTarget=-1;
                 } else {
-                    NSLog(@"MainMenuViewController: drag & drop canceled - invalid position");
-                    [_menuGridCollectionView cancelInteractiveMovement];
+                    
                 }
-                _mainmenu.dndIndex=-1;
-                _mainmenu.dndTarget=-1;
-            
             }
             break;
         
         default:
-            NSLog(@"MainMenuViewController: drag & drop canceled");
-            [_menuGridCollectionView cancelInteractiveMovement];
-            _mainmenu.dndIndex=-1;
-            _mainmenu.dndTarget=-1;
+            if(_bEditMode) {
+                NSLog(@"MainMenuViewController: drag & drop canceled");
+                [_menuGridCollectionView cancelInteractiveMovement];
+                _mainmenu.dndIndex=-1;
+                _mainmenu.dndTarget=-1;
+            }
             break;
     }
 }
@@ -351,5 +363,25 @@
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
     [_menuGridCollectionView addGestureRecognizer:tgr];
 }
+
+
+
+#pragma mark - other ui actions
+
+- (IBAction)editButtonPressed:(id)sender {
+    
+    UIButton *btn = (UIButton*)sender;
+    // toggle edit mode (TODO - change button image?)
+    if(_bEditMode) {
+        NSLog(@"MainMenuViewController: edit mode disabled");
+        _bEditMode = false;
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    } else {
+        NSLog(@"MainMenuViewController: edit mode enabled");
+        _bEditMode = true;
+        [btn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    }
+}
+
 
 @end
