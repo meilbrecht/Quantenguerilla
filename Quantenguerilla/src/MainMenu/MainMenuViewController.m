@@ -45,7 +45,7 @@
     
     _flowLayout = [[UICollectionViewFlowLayout alloc] init];
     //[_flowLayout setItemSize:_menuGridCollectionView.itemSize];
-    [_flowLayout setItemSize:CGSizeMake(391, 293)];
+    [_flowLayout setItemSize:CGSizeMake(320,290)];//(330,299)];//(391, 293)];
     [_flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     //[_flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     [_menuGridCollectionView setBounces:NO];

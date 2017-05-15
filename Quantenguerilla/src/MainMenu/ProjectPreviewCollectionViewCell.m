@@ -16,7 +16,7 @@
     if (!_imageView) {
 //        CGFloat x = self.frame.origin.x+64;
 //        CGFloat y = self.frame.origin.y+20;
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(64, 20, 264, 198)];
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(33,20,264,198)];//(64, 20, 264, 198)];
         [self.contentView addSubview:_imageView];
     }
     return _imageView;
@@ -26,7 +26,7 @@
     if (!_projectName) {
 //        CGFloat x = self.frame.origin.x+20;
 //        CGFloat y = self.frame.origin.y+226;
-        _projectName = [[UILabel alloc] initWithFrame:CGRectMake(20, 226, 352, 48)];
+        _projectName = [[UILabel alloc] initWithFrame:CGRectMake(33,226,264,48)];//(20, 226, 352, 48)];
         _projectName.textAlignment = NSTextAlignmentCenter;
         _projectName.textColor = [UIColor whiteColor];
         [self.contentView addSubview:_projectName];
