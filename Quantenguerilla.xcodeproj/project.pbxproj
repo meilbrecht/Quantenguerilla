@@ -165,7 +165,6 @@
 				6F05C8101EB352190048CD18 /* Workspace */,
 				6F05C7E81EB117C10048CD18 /* MainMenu */,
 				6F05C7DA1EB10E1C0048CD18 /* img */,
-				6F05C7AD1EB0F02A0048CD18 /* Main.storyboard */,
 				6F05C7B31EB0F02A0048CD18 /* Assets.xcassets */,
 				6F05C7B51EB0F02A0048CD18 /* LaunchScreen.storyboard */,
 				6F05C7B81EB0F02A0048CD18 /* Info.plist */,
@@ -228,6 +227,7 @@
 		6F05C7E81EB117C10048CD18 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
+				6F05C7AD1EB0F02A0048CD18 /* Main.storyboard */,
 				6F05C8141EB354BA0048CD18 /* MainMenu.h */,
 				6F05C8151EB354BA0048CD18 /* MainMenu.m */,
 				6F05C8161EB354BA0048CD18 /* MainMenuViewController.h */,
@@ -331,6 +331,9 @@
 		6F05C7991EB0F02A0048CD18 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					WorkspaceStoryboard,
+				);
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Marius Eilbrecht";
 				TargetAttributes = {
@@ -585,6 +588,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SL4A6X8264;
 				INFOPLIST_FILE = Quantenguerilla/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = (
 					"-I/src",
@@ -605,6 +609,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SL4A6X8264;
 				INFOPLIST_FILE = Quantenguerilla/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = (
 					"-I/src",

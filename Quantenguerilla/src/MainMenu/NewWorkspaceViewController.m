@@ -7,6 +7,8 @@
 //
 
 #import "NewWorkspaceViewController.h"
+#import "WorkspaceViewController.h"
+#import "FXWorkspaceViewController.h"
 
 @interface NewWorkspaceViewController ()
 
@@ -18,9 +20,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UILabel *test = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 250, 60)];
-    test.text = @"TEST";
-    [self.view addSubview:test];
+    //UILabel *test = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 250, 60)];
+    //test.text = @"TEST";
+    //[self.view addSubview:test];
+//    CGRect newFrame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, NEW_WORKSPACE_VC_WIDTH, NEW_WORKSPACE_VC_HEIGHT);
+//    self.view.frame = newFrame;
+    self.preferredContentSize = CGSizeMake(NEW_WORKSPACE_VC_WIDTH, NEW_WORKSPACE_VC_HEIGHT);
+    _selectedWorkspaceType = no_workspace_type_selected;
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -43,6 +49,8 @@
         [self.view.window removeGestureRecognizer:_tapBehindGesture];
         _tapBehindGesture = nil;
     };
+    
+    [self.delegate newWorkspaceTypeSelected:self newWorkspaceType:_selectedWorkspaceType];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,6 +67,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+#pragma mark - Gestures
 
 - (void)tapBehindDetected:(UITapGestureRecognizer *)sender
 {
@@ -78,6 +89,54 @@
 // because of iOS8
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     return YES;
+}
+
+
+
+#pragma mark - new workspace (segue)
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    //NSIndexPath *indexPath = (NSIndexPath*)sender;
+    
+    // segue identifier from storyboard!!
+    if ([[segue identifier] isEqualToString:@"workspaceSegue"]) {
+        
+        UIStoryboard *workspaceStoryboard = [UIStoryboard storyboardWithName:@"WorkspaceStoryboard" bundle:nil];
+        WorkspaceViewController *workspaceVC = [workspaceStoryboard instantiateInitialViewController];
+        //WorkspaceViewController *workspaceVC = (WorkspaceViewController*)[workspaceStoryboard instantiateViewControllerWithIdentifier:@"workspaceSegue"];
+        [self.navigationController pushViewController:workspaceVC animated:YES];
+
+        // Get reference to the destination view controller
+        //WorkspaceViewController *workspaceVC = [segue destinationViewController];
+    }
+    else if ([[segue identifier] isEqualToString:@"fxWorkspaceSegue"]) {
+        FXWorkspaceViewController* fxWorkspaceVC = [segue destinationViewController];
+        //newWorkspaceVC.transitioningDelegate = self;
+        // todo - pass any data??
+        
+    }
+}
+
+- (IBAction)newFxControllerButtonPressed:(id)sender {
+    // create FX Controller (FXWorkspaceViewController)
+    //[self performSegueWithIdentifier:@"fxWorkspaceSegue" sender:self];
+    _selectedWorkspaceType = fx_controller;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)newFxFbControllerButtonPressed:(id)sender {
+    // create FX + FB Controller (WorkspaceViewController)
+    //[self performSegueWithIdentifier:@"workspaceSegue" sender:self];
+    
+    // todo - go back to main menu view controller (return value??) and open new view controller from there!
+    _selectedWorkspaceType = fx_fb_controller;
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+//    UIStoryboard *workspaceStoryboard = [UIStoryboard storyboardWithName:@"WorkspaceStoryboard" bundle:nil];
+//    WorkspaceViewController *workspaceVC = [workspaceStoryboard instantiateInitialViewController];
+//    workspaceVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+//    [self.navigationController pushViewController:workspaceVC animated:YES];
 }
 
 

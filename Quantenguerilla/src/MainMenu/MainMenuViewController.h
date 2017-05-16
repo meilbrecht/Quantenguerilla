@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MainMenu.h"
 #import "RMPZoomTransitionAnimator.h"
+#import "NewWorkspaceViewController.h"
 
-@interface MainMenuViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, RMPZoomTransitionAnimating>
+@interface MainMenuViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, NewWorkspaceDelegate, RMPZoomTransitionAnimating>
 
 @property (strong, nonatomic) MainMenu *mainmenu;
 @property (strong, nonatomic) IBOutlet UICollectionView *menuGridCollectionView;

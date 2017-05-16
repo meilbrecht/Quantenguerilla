@@ -9,7 +9,7 @@
 #import "MainMenuViewController.h"
 #import "ProjectPreviewCollectionViewCell.h"
 #import "WorkspaceViewController.h"
-#import "NewWorkspaceViewController.h"
+#import "FXWorkspaceViewController.h"
 
 @interface MainMenuViewController ()
 
@@ -47,12 +47,14 @@
     
     _flowLayout = [[UICollectionViewFlowLayout alloc] init];
     //[_flowLayout setItemSize:_menuGridCollectionView.itemSize];
-    [_flowLayout setItemSize:CGSizeMake(320,290)];//(330,299)];//(391, 293)];
+    [_flowLayout setItemSize:CGSizeMake(324,224)];//(330,299)];//(391, 293)];
     [_flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     //[_flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     [_menuGridCollectionView setBounces:NO];
     [_menuGridCollectionView setCollectionViewLayout:_flowLayout];
     _menuGridCollectionView.pagingEnabled = true;
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 #pragma mark - UICollectionView DataSource
@@ -152,6 +154,21 @@
 
 #pragma mark - (new) workspace view controller
 
+- (void) newWorkspaceTypeSelected:(NewWorkspaceViewController *)controller newWorkspaceType:(WorkspaceType)type {
+    if(type == fx_controller) {
+        [self performSegueWithIdentifier:@"fxWorkspaceSegue" sender:nil];
+    } else if(type == fx_fb_controller) {
+//            UIStoryboard *workspaceStoryboard = [UIStoryboard storyboardWithName:@"WorkspaceStoryboard" bundle:nil];
+//            WorkspaceViewController *workspaceVC = [workspaceStoryboard instantiateInitialViewController];
+//            workspaceVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+//            [self.navigationController pushViewController:workspaceVC animated:YES];
+        [self performSegueWithIdentifier:@"workspaceSegue" sender:nil];
+    } else {
+        // selection for new workspace canceled
+    }
+}
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSIndexPath *indexPath = (NSIndexPath*)sender;
@@ -161,12 +178,32 @@
         // Get reference to the destination view controller
         WorkspaceViewController *workspaceVC = [segue destinationViewController];
 //        workspaceVC.transitioningDelegate = self;
-        [workspaceVC setProject:[_mainmenu.projects objectAtIndex:indexPath.row]];
+        if(indexPath!=nil) {
+            [workspaceVC setProject:[_mainmenu.projects objectAtIndex:indexPath.row]];
+        }
+        //[self performSegueWithIdentifier:@"workspaceSegue" sender:self];
+        //[self.navigationController pushViewController:workspaceVC animated:YES];
+        //[self.navigationController showViewController:workspaceVC sender:self];
+        [self.navigationController presentViewController:workspaceVC animated:YES completion:nil];
+    } else if ([[segue identifier] isEqualToString:@"fxWorkspaceSegue"]) {
+        // Get reference to the destination view controller
+        FXWorkspaceViewController *fxWorkspaceVC = [segue destinationViewController];
+        //        workspaceVC.transitioningDelegate = self;
+        if(indexPath!=nil) {
+            [fxWorkspaceVC setProject:[_mainmenu.projects objectAtIndex:indexPath.row]];
+        }
+        //[self performSegueWithIdentifier:@"fxWorkspaceSegue" sender:self];
+        //[self.navigationController pushViewController:fxWorkspaceVC animated:YES];
+        //[self.navigationController showViewController:fxWorkspaceVC sender:self];
+        [self.navigationController presentViewController:fxWorkspaceVC animated:YES completion:nil];
     }
     else if ([[segue identifier] isEqualToString:@"newWorkspaceSegue"]) {
-          NewWorkspaceViewController* newWorkspaceVC = [segue destinationViewController];
+        NewWorkspaceViewController* newWorkspaceVC = [segue destinationViewController];
+        newWorkspaceVC.delegate = self;
         //newWorkspaceVC.transitioningDelegate = self;
             // todo - pass any data??
+        //newWorkspaceVC.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+        [self.navigationController pushViewController:newWorkspaceVC animated:YES];
         
     }
 }
@@ -267,7 +304,8 @@
             // open project workspace
             // check which cell was tapped
             if(indexPath.row < [_mainmenu.projects count]) {
-                // load workspace
+                // load workspace (todo - check project type!!!)
+                //[self performSegueWithIdentifier:@"workspaceSegue" sender:self];
                 [self performSegueWithIdentifier:@"workspaceSegue" sender:indexPath];
             } else {
                 // new workspace

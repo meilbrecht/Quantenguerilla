@@ -24,6 +24,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) setProject:(nullable NSObject*)project {
+    
+}
+
 /*
 #pragma mark - Navigation
 
@@ -33,5 +37,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)menuButtonPressed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

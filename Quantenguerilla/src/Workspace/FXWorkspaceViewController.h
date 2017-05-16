@@ -10,4 +10,6 @@
 
 @interface FXWorkspaceViewController : UIViewController
 
+- (void) setProject:(nullable NSObject*)project;
+
 @end
