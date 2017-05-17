@@ -7,12 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Project.h"
+#import "WorkspaceCommon.h"
+
+@class WorkspaceViewController;
+
+@protocol WorkspaceDelegate <NSObject>
+- (void)workspaceChanged:(WorkspaceViewController*)controller forProject:(Project*)project;
+@end
 
 @interface WorkspaceViewController : UIViewController
 
+@property (nonatomic, weak) id <WorkspaceDelegate> delegate;
 
-//- (void) setProject:(nullable Project*)project;
-- (void) setProject:(nullable NSObject*)project;
+@property (nonatomic, strong) WorkspaceCommon *workspace;
+
+- (void) setProject:(Project*)project;
 
 @end

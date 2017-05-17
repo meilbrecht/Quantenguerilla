@@ -105,4 +105,23 @@
     // todo - save to global app settings file!!!
 }
 
+- (void) addProject:(Project*)project {
+    if((_projects == nil) || (project == nil)) {
+        [NSException raise:@"Invalid operation - could not add project to list" format:@"Invalid operation - either the project array (%@) or the new project (%@) does not exist", _projects, project];
+    }
+    
+    uint8_t equalNameCounter=0;
+    // todo - wont work if projects with equal name + number are changed in order!!!
+    for(int i=0; i<[_projects count]; i++) {
+        Project *oldProject = [_projects objectAtIndex:i];
+        if([oldProject.title isEqualToString:project.title]) {
+            equalNameCounter++;
+            NSString *appending = [NSString stringWithFormat: @" %d", equalNameCounter];
+            project.title = [project.title stringByAppendingString:appending];
+        }
+    }
+
+    [_projects addObject:project];
+}
+
 @end

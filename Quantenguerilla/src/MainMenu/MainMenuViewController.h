@@ -10,8 +10,10 @@
 #import "MainMenu.h"
 #import "RMPZoomTransitionAnimator.h"
 #import "NewWorkspaceViewController.h"
+#import "WorkspaceViewController.h"
+#import "FXWorkspaceViewController.h"
 
-@interface MainMenuViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, NewWorkspaceDelegate, RMPZoomTransitionAnimating>
+@interface MainMenuViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, NewWorkspaceDelegate, WorkspaceDelegate, FXWorkspaceDelegate, RMPZoomTransitionAnimating>
 
 @property (strong, nonatomic) MainMenu *mainmenu;
 @property (strong, nonatomic) IBOutlet UICollectionView *menuGridCollectionView;

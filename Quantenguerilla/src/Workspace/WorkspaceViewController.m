@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _workspace = [[WorkspaceCommon alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,9 +25,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) setProject:(nullable NSObject*)project {
-    
+- (void) setProject:(Project*)project {
+    [_workspace setProject:project];
 }
+
 /*
 #pragma mark - Navigation
 
@@ -43,6 +45,14 @@
     // todo remove all gesture recognizers etc.
     //[self.view.window removeGestureRecognizer:sender];
     
+    // todo - screenshot etc; delegate for communication with parent view controller!!!
+    // 1. save in project only
+    // 2. back in menu mark workspace cell as "unsaved" (colored frame?)
+    // 3. when opening other workspace -> pop up (save, discard, cancel)
+    // (same in FXWorkspaceViewController!!)
+    // 4. on save: write project data to file
+    [_workspace storeProjectData:self.view];
+    [self.delegate workspaceChanged:self forProject:_workspace.project];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

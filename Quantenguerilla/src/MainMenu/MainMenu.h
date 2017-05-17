@@ -21,5 +21,6 @@
 - (NSArray*) loadImages;
 - (uint16_t) getNumberOfImages;
 - (void) reorderProjects;
+- (void) addProject:(Project*)project;
 
 @end

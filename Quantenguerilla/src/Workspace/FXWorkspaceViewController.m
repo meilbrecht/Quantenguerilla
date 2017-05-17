@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _workspace = [[WorkspaceCommon alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,8 +25,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) setProject:(nullable NSObject*)project {
-    
+- (void) setProject:(Project*)project {
+    [_workspace setProject:project];
 }
 
 /*
@@ -39,6 +40,8 @@
 */
 
 - (IBAction)menuButtonPressed:(id)sender {
+    [_workspace storeProjectData:self.view];
+    [self.delegate fxWorkspaceChanged:self forProject:_workspace.project];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

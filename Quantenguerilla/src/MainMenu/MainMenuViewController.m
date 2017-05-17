@@ -41,20 +41,16 @@
 
     [_menuGridCollectionView setDataSource:self];
     [_menuGridCollectionView setDelegate:self];
-    //[_menuGridCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     [_menuGridCollectionView registerClass:[ProjectPreviewCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     [_menuGridCollectionView setBackgroundColor:[UIColor blackColor]];
     
     _flowLayout = [[UICollectionViewFlowLayout alloc] init];
     //[_flowLayout setItemSize:_menuGridCollectionView.itemSize];
-    [_flowLayout setItemSize:CGSizeMake(324,224)];//(330,299)];//(391, 293)];
+    [_flowLayout setItemSize:CGSizeMake(324,224)];
     [_flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    //[_flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     [_menuGridCollectionView setBounces:NO];
     [_menuGridCollectionView setCollectionViewLayout:_flowLayout];
     _menuGridCollectionView.pagingEnabled = true;
-    
-    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 #pragma mark - UICollectionView DataSource
@@ -62,7 +58,10 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     // todo - get number of projects!!! (not images)
-    return ([_mainmenu getNumberOfImages]+1);   // +1 for new project button (plus)
+    NSInteger numberOfProjects;
+    numberOfProjects = [_mainmenu.projects count];
+    
+    return (numberOfProjects+1);   // +1 for new project button (plus)
 }
 
 // create a cell for the "new project" button
@@ -152,23 +151,7 @@
 }
 
 
-#pragma mark - (new) workspace view controller
-
-- (void) newWorkspaceTypeSelected:(NewWorkspaceViewController *)controller newWorkspaceType:(WorkspaceType)type {
-    if(type == fx_controller) {
-        [self performSegueWithIdentifier:@"fxWorkspaceSegue" sender:nil];
-    } else if(type == fx_fb_controller) {
-//            UIStoryboard *workspaceStoryboard = [UIStoryboard storyboardWithName:@"WorkspaceStoryboard" bundle:nil];
-//            WorkspaceViewController *workspaceVC = [workspaceStoryboard instantiateInitialViewController];
-//            workspaceVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-//            [self.navigationController pushViewController:workspaceVC animated:YES];
-        [self performSegueWithIdentifier:@"workspaceSegue" sender:nil];
-    } else {
-        // selection for new workspace canceled
-    }
-}
-
-
+#pragma mark - load another view controller
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSIndexPath *indexPath = (NSIndexPath*)sender;
@@ -184,6 +167,7 @@
         //[self performSegueWithIdentifier:@"workspaceSegue" sender:self];
         //[self.navigationController pushViewController:workspaceVC animated:YES];
         //[self.navigationController showViewController:workspaceVC sender:self];
+        workspaceVC.delegate = self;
         [self.navigationController presentViewController:workspaceVC animated:YES completion:nil];
     } else if ([[segue identifier] isEqualToString:@"fxWorkspaceSegue"]) {
         // Get reference to the destination view controller
@@ -195,6 +179,7 @@
         //[self performSegueWithIdentifier:@"fxWorkspaceSegue" sender:self];
         //[self.navigationController pushViewController:fxWorkspaceVC animated:YES];
         //[self.navigationController showViewController:fxWorkspaceVC sender:self];
+        fxWorkspaceVC.delegate = self;
         [self.navigationController presentViewController:fxWorkspaceVC animated:YES completion:nil];
     }
     else if ([[segue identifier] isEqualToString:@"newWorkspaceSegue"]) {
@@ -283,6 +268,50 @@
     }
     return nil;
 }
+
+
+#pragma mark - (New) Workspace View Controller Delegates
+
+- (void) handleChangedWorkspaceForProject:(Project*)project {
+    // display new screenshot in collection view and add project to array
+    //  check if project already exists (previously loaded from here) or if it is a new project!!
+    
+    //todo - if(projectType == newProject) {
+    
+        [_mainmenu addProject:project];
+        // todo - only reload specific project!?
+        [_menuGridCollectionView reloadData];
+    
+    
+    // } else {
+    
+    // }
+    
+}
+
+- (void) workspaceChanged:(WorkspaceViewController *)controller forProject:(Project *)project {
+    [self handleChangedWorkspaceForProject:project];
+}
+
+-(void) fxWorkspaceChanged:(FXWorkspaceViewController *)controller forProject:(Project *)project {
+    [self handleChangedWorkspaceForProject:project];
+}
+
+- (void) newWorkspaceTypeSelected:(NewWorkspaceViewController *)controller newWorkspaceType:(WorkspaceType)type {
+    
+    if(type == fx_controller) {
+        // todo - set project and workspace to nil (new one!), ask before that, if changes (if available) in last project should be changed
+        [self performSegueWithIdentifier:@"fxWorkspaceSegue" sender:nil];
+    } else if(type == fx_fb_controller) {
+        // todo - set project and workspace to nil (new one!), ask before that, if changes (if available) in last project should be changed
+        [self performSegueWithIdentifier:@"workspaceSegue" sender:nil];
+    } else {
+        // selection for new workspace canceled
+    }
+}
+
+
+
 
 
 

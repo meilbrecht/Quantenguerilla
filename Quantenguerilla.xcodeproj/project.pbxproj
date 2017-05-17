@@ -40,6 +40,7 @@
 		6F4D4DA41EB4C2CD00A0DC69 /* NewWorkspaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D4DA31EB4C2CD00A0DC69 /* NewWorkspaceViewController.m */; };
 		6F4D4DA71EB4DB5F00A0DC69 /* FXWorkspaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D4DA61EB4DB5F00A0DC69 /* FXWorkspaceViewController.m */; };
 		6F4D4DAB1EB51AE100A0DC69 /* RMPZoomTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D4DAA1EB51AE100A0DC69 /* RMPZoomTransitionAnimator.m */; };
+		6F91E5891ECC4A1A0031A09D /* WorkspaceCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F91E5881ECC4A1A0031A09D /* WorkspaceCommon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		6F4D4DA61EB4DB5F00A0DC69 /* FXWorkspaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FXWorkspaceViewController.m; path = src/Workspace/FXWorkspaceViewController.m; sourceTree = "<group>"; };
 		6F4D4DA91EB51AE100A0DC69 /* RMPZoomTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMPZoomTransitionAnimator.h; path = src/RMPZoomTransitionAnimator/RMPZoomTransitionAnimator.h; sourceTree = "<group>"; };
 		6F4D4DAA1EB51AE100A0DC69 /* RMPZoomTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMPZoomTransitionAnimator.m; path = src/RMPZoomTransitionAnimator/RMPZoomTransitionAnimator.m; sourceTree = "<group>"; };
+		6F91E5871ECC4A1A0031A09D /* WorkspaceCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkspaceCommon.h; path = src/Workspace/WorkspaceCommon.h; sourceTree = "<group>"; };
+		6F91E5881ECC4A1A0031A09D /* WorkspaceCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkspaceCommon.m; path = src/Workspace/WorkspaceCommon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +246,8 @@
 		6F05C8101EB352190048CD18 /* Workspace */ = {
 			isa = PBXGroup;
 			children = (
+				6F91E5871ECC4A1A0031A09D /* WorkspaceCommon.h */,
+				6F91E5881ECC4A1A0031A09D /* WorkspaceCommon.m */,
 				6F05C8111EB353180048CD18 /* WorkspaceViewController.h */,
 				6F05C8121EB353180048CD18 /* WorkspaceViewController.m */,
 				6F4D4DA51EB4DB5F00A0DC69 /* FXWorkspaceViewController.h */,
@@ -425,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F91E5891ECC4A1A0031A09D /* WorkspaceCommon.m in Sources */,
 				6F05C81A1EB354BA0048CD18 /* MainMenu.m in Sources */,
 				6F05C8131EB353180048CD18 /* WorkspaceViewController.m in Sources */,
 				6F05C7B21EB0F02A0048CD18 /* Quantenguerilla.xcdatamodeld in Sources */,
