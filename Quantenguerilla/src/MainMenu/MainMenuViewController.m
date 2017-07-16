@@ -24,8 +24,10 @@
     
     _bEditMode = false;
     
-    _mainmenu = [[MainMenu alloc]init];
-    [_mainmenu loadProjects];
+    if(_mainmenu==nil) {
+        _mainmenu = [[MainMenu alloc]init];
+        [_mainmenu loadProjects];
+    }
     
     [self initCollectionView];
     [self initGestureRecognizer];
@@ -162,6 +164,8 @@
         WorkspaceViewController *workspaceVC = [segue destinationViewController];
 //        workspaceVC.transitioningDelegate = self;
         if(indexPath!=nil) {
+            NSLog(@"PROJECT INDEX: %ld", indexPath.row);
+            NSLog(@"LAST PROJECT INDEX: %ld", ([_mainmenu.projects count]-1));
             [workspaceVC setProject:[_mainmenu.projects objectAtIndex:indexPath.row]];
         }
         //[self performSegueWithIdentifier:@"workspaceSegue" sender:self];
@@ -346,6 +350,8 @@
     
 }
 
+
+
 - (void) handleLongGesture:(UILongPressGestureRecognizer*) gesture {
     
     switch(gesture.state) {
@@ -353,6 +359,8 @@
         case UIGestureRecognizerStateBegan: {
             
                 NSIndexPath *indexPath = [_menuGridCollectionView indexPathForItemAtPoint:[gesture locationInView:_menuGridCollectionView]];
+            
+                NSLog(@"long gesture on %ld began", indexPath.row);
             
                 if(_bEditMode) {
                     // forbid item being last element ('+' always!!!)
@@ -375,6 +383,8 @@
        
         case UIGestureRecognizerStateChanged: {
             
+                NSLog(@"long gesture changed");
+            
                 if(_mainmenu.dndIndex >= [_mainmenu.projects count]) {
                     break;
                 }
@@ -386,6 +396,8 @@
             break;
         
         case UIGestureRecognizerStateEnded: {
+            
+                NSLog(@"long gesture on ended");
             
                 if(_mainmenu.dndIndex >= [_mainmenu.projects count]) {
                     break;

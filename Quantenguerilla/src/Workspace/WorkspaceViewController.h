@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WorkspaceCommon.h"
+#import "XyFieldView.h"
 
 @class WorkspaceViewController;
 
@@ -15,11 +16,15 @@
 - (void)workspaceChanged:(WorkspaceViewController*)controller forProject:(Project*)project;
 @end
 
-@interface WorkspaceViewController : UIViewController
+@interface WorkspaceViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, weak) id <WorkspaceDelegate> delegate;
 
 @property (nonatomic, strong) WorkspaceCommon *workspace;
+
+@property (weak, nonatomic) IBOutlet XyFieldView *xyFieldView1;
+@property (weak, nonatomic) IBOutlet XyFieldView *xyFieldView2;
+@property (weak, nonatomic) IBOutlet UITextField *projectNameTextField;
 
 - (void) setProject:(Project*)project;
 

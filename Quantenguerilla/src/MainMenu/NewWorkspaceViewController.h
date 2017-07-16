@@ -7,15 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Project.h"
 
 #define NEW_WORKSPACE_VC_WIDTH  598
 #define NEW_WORKSPACE_VC_HEIGHT 420
 
-typedef enum workspace_type {
-    no_workspace_type_selected,
-    fx_controller,
-    fx_fb_controller
-}WorkspaceType;
+
 
 @class NewWorkspaceViewController;
 

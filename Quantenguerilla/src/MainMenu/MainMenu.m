@@ -23,9 +23,29 @@
     return self;
 }
 
+- (void) showFolderContentForPath:(NSString*)path {
+    
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSDirectoryEnumerator *direnum = [manager enumeratorAtPath:path];
+    NSString *filename;
+    
+    NSLog(@"### Current Path: %@ ###", path);
+    NSLog(@"### Files in resource folder: ###");
+    while ((filename = [direnum nextObject] )) {
+        
+        //change the suffix to what you are looking for
+        //if ([filename hasSuffix:@".data"]) {
+        
+        // Do work here
+        NSLog(@"> %@", filename);
+        //}
+    }
+}
+
 - (NSArray*) getImgDirectoryContent {
     NSMutableString* bundlePath = [NSMutableString stringWithCapacity:4];
     [bundlePath appendString:[[NSBundle mainBundle] bundlePath]];
+    [self showFolderContentForPath:bundlePath];
     NSArray *directoryContent  = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:bundlePath error:nil];
     return directoryContent;
 }
@@ -46,30 +66,36 @@
     return numberOfImages;
 }
 
-- (NSArray*) loadImages {
-    
-    __block NSMutableArray* images = [[NSMutableArray alloc]init];
-    NSArray *directoryContent = [self getImgDirectoryContent];
-    
-    [directoryContent enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-       
-        NSString *filename = (NSString *)obj;
-        NSString *extension = [[filename pathExtension] lowercaseString];
-        
-        if([extension isEqualToString:@"jpg"] && ![filename isEqualToString:@"plus.jpg"]) {
-            // skip "plus.jpg" - will be added manually
-            [images addObject:[UIImage imageNamed:filename]];
-        }
-    }];
-    
-    return images;
-}
+// unused
+//- (NSArray*) loadImages {
+//    
+//    __block NSMutableArray* images = [[NSMutableArray alloc]init];
+//    NSArray *directoryContent = [self getImgDirectoryContent];
+//    
+//    [directoryContent enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//       
+//        NSString *filename = (NSString *)obj;
+//        NSString *extension = [[filename pathExtension] lowercaseString];
+//        
+//        if([extension isEqualToString:@"jpg"] && ![filename isEqualToString:@"plus.jpg"]) {
+//            // skip "plus.jpg" - will be added manually
+//            [images addObject:[UIImage imageNamed:filename]];
+//        }
+//    }];
+//    
+//    return images;
+//}
 
 - (void) loadProjects {
     
     if(_projects==nil) {
         _projects = [[NSMutableArray alloc] init];
     }
+    
+    // todo -   FAKE version for testing only!!!!
+    //      TODO:
+    //          load project files, not screenshots here!!
+    //          project file needs "link" to screenshot
         
     NSArray *directoryContent = [self getImgDirectoryContent];
     [directoryContent enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -110,18 +136,27 @@
         [NSException raise:@"Invalid operation - could not add project to list" format:@"Invalid operation - either the project array (%@) or the new project (%@) does not exist", _projects, project];
     }
     
-    uint8_t equalNameCounter=0;
+    int count=0;
+    boolean_t overrideProject=false;
+    //uint8_t equalNameCounter=0;
     // todo - wont work if projects with equal name + number are changed in order!!!
-    for(int i=0; i<[_projects count]; i++) {
-        Project *oldProject = [_projects objectAtIndex:i];
+    for(count=0; count<[_projects count]; count++) {
+        Project *oldProject = [_projects objectAtIndex:count];
         if([oldProject.title isEqualToString:project.title]) {
-            equalNameCounter++;
-            NSString *appending = [NSString stringWithFormat: @" %d", equalNameCounter];
-            project.title = [project.title stringByAppendingString:appending];
+            overrideProject = true; // todo - pop-up: ask if project shall be overwritten?
+            break;
+            // todo - replace old project with new project (delete and add?)
+//            equalNameCounter++;
+//            NSString *appending = [NSString stringWithFormat: @" %d", equalNameCounter];
+//            project.title = [project.title stringByAppendingString:appending];
         }
     }
 
-    [_projects addObject:project];
+    if(overrideProject) {
+        [_projects replaceObjectAtIndex:count withObject:project];
+    } else {
+        [_projects addObject:project];
+    }
 }
 
 @end

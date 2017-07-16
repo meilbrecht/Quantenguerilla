@@ -12,5 +12,14 @@
 
 @synthesize title = _title;
 @synthesize screenshot = _screenshot;
+@synthesize workspaceType = _workspaceType;
+
+@synthesize hasChanged = _hasChanged;
+
+- (id)init {
+    _title = [[NSString alloc] init];
+    _screenshot = [[UIImage alloc] init];
+    return self;
+}
 
 @end

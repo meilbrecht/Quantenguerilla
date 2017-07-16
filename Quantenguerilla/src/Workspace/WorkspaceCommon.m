@@ -10,8 +10,23 @@
 
 @implementation WorkspaceCommon
 
+- (id)init {
+    if(_project==nil) {
+        _project =[[Project alloc]init];
+        _project.title = @"NEW PROJECT";
+    }
+    return self;
+}
 
 - (void)setProject:(Project *)project {
+    if(project==nil) {
+        NSLog(@"project is empty");
+        project = [[Project alloc] init];
+    }
+    if([project.title compare:@""]==0) {
+        NSLog(@"new project");
+        project.title = @"NEW PROJECT";
+    }
     _project = project;
 }
 
@@ -28,6 +43,8 @@
     if(_project==nil) {
         _project =[[Project alloc]init];
         _project.title = @"NEW PROJECT";
+    } else {
+        // project already exists
     }
     _project.screenshot = [self getScreenshotOfView:view];
     // todo...

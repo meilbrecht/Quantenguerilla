@@ -23,6 +23,8 @@
 @property (nonatomic) NSIndexPath *selectedItemIndexPath;
 @property (nonatomic) boolean_t bEditMode;
 
+@property (nonatomic) Project *lastProject;
+
 
 - (IBAction)editButtonPressed:(id)sender;
 - (void) handleLongGesture:(UILongPressGestureRecognizer*) gesture;

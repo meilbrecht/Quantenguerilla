@@ -17,7 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     _workspace = [[WorkspaceCommon alloc] init];
+    
+    [_projectNameTextField addTarget:self action:@selector(projectNameEdited) forControlEvents:UIControlEventEditingDidEndOnExit];
+    
+    [self.view addSubview:_xyFieldView1];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,6 +33,12 @@
 - (void) setProject:(Project*)project {
     [_workspace setProject:project];
 }
+
+- (void)projectNameEdited {
+    _workspace.project.title = _projectNameTextField.text;
+    NSLog(@"WorkspaceViewController: Project Name changed to %@", _workspace.project.title);
+}
+
 
 /*
 #pragma mark - Navigation

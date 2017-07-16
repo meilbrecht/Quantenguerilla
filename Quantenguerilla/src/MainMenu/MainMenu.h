@@ -18,7 +18,7 @@
 
 - (void) loadProjects;
 - (NSArray*) getImgDirectoryContent;
-- (NSArray*) loadImages;
+//- (NSArray*) loadImages;
 - (uint16_t) getNumberOfImages;
 - (void) reorderProjects;
 - (void) addProject:(Project*)project;
