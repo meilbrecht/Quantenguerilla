@@ -164,8 +164,8 @@
         WorkspaceViewController *workspaceVC = [segue destinationViewController];
 //        workspaceVC.transitioningDelegate = self;
         if(indexPath!=nil) {
-            NSLog(@"PROJECT INDEX: %ld", indexPath.row);
-            NSLog(@"LAST PROJECT INDEX: %ld", ([_mainmenu.projects count]-1));
+            NSLog(@"PROJECT INDEX: %ld", (long)indexPath.row);
+            NSLog(@"LAST PROJECT INDEX: %u", ([_mainmenu.projects count]-1));
             [workspaceVC setProject:[_mainmenu.projects objectAtIndex:indexPath.row]];
         }
         //[self performSegueWithIdentifier:@"workspaceSegue" sender:self];
@@ -360,7 +360,7 @@
             
                 NSIndexPath *indexPath = [_menuGridCollectionView indexPathForItemAtPoint:[gesture locationInView:_menuGridCollectionView]];
             
-                NSLog(@"long gesture on %ld began", indexPath.row);
+                NSLog(@"long gesture on %ld began", (long)indexPath.row);
             
                 if(_bEditMode) {
                     // forbid item being last element ('+' always!!!)

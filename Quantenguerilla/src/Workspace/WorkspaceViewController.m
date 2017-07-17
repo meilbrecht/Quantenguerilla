@@ -22,7 +22,12 @@
     
     [_projectNameTextField addTarget:self action:@selector(projectNameEdited) forControlEvents:UIControlEventEditingDidEndOnExit];
     
-    [self.view addSubview:_xyFieldView1];
+    [_xyFieldContainerView1 initializeSubviews];
+    [self.view addSubview:_xyFieldContainerView1];
+    [_xyFieldContainerView2 initializeSubviews];
+    [self.view addSubview:_xyFieldContainerView2];
+    
+    //[self.view addSubview:_xyFieldContainerView2];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -18,6 +18,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _workspace = [[WorkspaceCommon alloc] init];
+    
+    [_xyFieldContainerView1 initializeSubviews];
+    [self.view addSubview:_xyFieldContainerView1];
+    [_xyFieldContainerView2 initializeSubviews];
+    [self.view addSubview:_xyFieldContainerView2];
+    [_xyFieldContainerView3 initializeSubviews];
+    [self.view addSubview:_xyFieldContainerView3];
+    [_xyFieldContainerView4 initializeSubviews];
+    [self.view addSubview:_xyFieldContainerView4];
 }
 
 - (void)didReceiveMemoryWarning {

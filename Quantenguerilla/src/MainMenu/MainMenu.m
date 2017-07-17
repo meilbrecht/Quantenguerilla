@@ -30,15 +30,13 @@
     NSString *filename;
     
     NSLog(@"### Current Path: %@ ###", path);
-    NSLog(@"### Files in resource folder: ###");
+    NSLog(@"### Image files in resource folder: ###");
     while ((filename = [direnum nextObject] )) {
         
         //change the suffix to what you are looking for
-        //if ([filename hasSuffix:@".data"]) {
-        
-        // Do work here
-        NSLog(@"> %@", filename);
-        //}
+        if ([filename hasSuffix:@".jpg"]) {
+            NSLog(@"> %@", filename);
+        }
     }
 }
 

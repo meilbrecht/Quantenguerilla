@@ -114,6 +114,7 @@
         FXWorkspaceViewController* fxWorkspaceVC = [segue destinationViewController];
         //newWorkspaceVC.transitioningDelegate = self;
         // todo - pass any data??
+        [self.navigationController pushViewController:fxWorkspaceVC animated:YES];
         
     }
 }

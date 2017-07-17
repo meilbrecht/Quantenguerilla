@@ -37,12 +37,15 @@
 		6F05C81C1EB354BA0048CD18 /* ProjectPreviewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F05C8191EB354BA0048CD18 /* ProjectPreviewCollectionViewCell.m */; };
 		6F05C81F1EB354C90048CD18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F05C81E1EB354C90048CD18 /* AppDelegate.m */; };
 		6F05C8221EB385390048CD18 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F05C8211EB385390048CD18 /* Project.m */; };
+		6F10F4C51F1CAF3700159000 /* WorkspaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10F4C41F1CAF3700159000 /* WorkspaceView.m */; };
+		6F10F4C81F1CAF6B00159000 /* FXWorkspaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10F4C71F1CAF6B00159000 /* FXWorkspaceView.m */; };
+		6F10F4CA1F1CB8DA00159000 /* XyFieldContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F10F4C91F1CB8DA00159000 /* XyFieldContainerView.xib */; };
+		6F10F4CD1F1CB8F700159000 /* XyFieldContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10F4CC1F1CB8F700159000 /* XyFieldContainerView.m */; };
 		6F4D4DA41EB4C2CD00A0DC69 /* NewWorkspaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D4DA31EB4C2CD00A0DC69 /* NewWorkspaceViewController.m */; };
 		6F4D4DA71EB4DB5F00A0DC69 /* FXWorkspaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D4DA61EB4DB5F00A0DC69 /* FXWorkspaceViewController.m */; };
 		6F4D4DAB1EB51AE100A0DC69 /* RMPZoomTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D4DAA1EB51AE100A0DC69 /* RMPZoomTransitionAnimator.m */; };
 		6F91E5891ECC4A1A0031A09D /* WorkspaceCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F91E5881ECC4A1A0031A09D /* WorkspaceCommon.m */; };
 		6FB36CA71F1B67B100A4F9D7 /* XyFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB36CA61F1B67B100A4F9D7 /* XyFieldView.m */; };
-		6FB36CA91F1B7BE000A4F9D7 /* XyFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FB36CA81F1B7BE000A4F9D7 /* XyFieldView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,13 @@
 		6F05C81E1EB354C90048CD18 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = src/AppDelegate.m; sourceTree = "<group>"; };
 		6F05C8201EB385390048CD18 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Project.h; path = src/Workspace/Project.h; sourceTree = "<group>"; };
 		6F05C8211EB385390048CD18 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Project.m; path = src/Workspace/Project.m; sourceTree = "<group>"; };
+		6F10F4C31F1CAF3700159000 /* WorkspaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkspaceView.h; path = src/Workspace/WorkspaceView.h; sourceTree = "<group>"; };
+		6F10F4C41F1CAF3700159000 /* WorkspaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkspaceView.m; path = src/Workspace/WorkspaceView.m; sourceTree = "<group>"; };
+		6F10F4C61F1CAF6B00159000 /* FXWorkspaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FXWorkspaceView.h; path = src/Workspace/FXWorkspaceView.h; sourceTree = "<group>"; };
+		6F10F4C71F1CAF6B00159000 /* FXWorkspaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FXWorkspaceView.m; path = src/Workspace/FXWorkspaceView.m; sourceTree = "<group>"; };
+		6F10F4C91F1CB8DA00159000 /* XyFieldContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XyFieldContainerView.xib; path = src/XYfield/XyFieldContainerView.xib; sourceTree = "<group>"; };
+		6F10F4CB1F1CB8F700159000 /* XyFieldContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XyFieldContainerView.h; path = src/XYfield/XyFieldContainerView.h; sourceTree = "<group>"; };
+		6F10F4CC1F1CB8F700159000 /* XyFieldContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XyFieldContainerView.m; path = src/XYfield/XyFieldContainerView.m; sourceTree = "<group>"; };
 		6F4D4DA21EB4C2CD00A0DC69 /* NewWorkspaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewWorkspaceViewController.h; path = src/MainMenu/NewWorkspaceViewController.h; sourceTree = "<group>"; };
 		6F4D4DA31EB4C2CD00A0DC69 /* NewWorkspaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewWorkspaceViewController.m; path = src/MainMenu/NewWorkspaceViewController.m; sourceTree = "<group>"; };
 		6F4D4DA51EB4DB5F00A0DC69 /* FXWorkspaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FXWorkspaceViewController.h; path = src/Workspace/FXWorkspaceViewController.h; sourceTree = "<group>"; };
@@ -115,7 +125,6 @@
 		6F91E5881ECC4A1A0031A09D /* WorkspaceCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkspaceCommon.m; path = src/Workspace/WorkspaceCommon.m; sourceTree = "<group>"; };
 		6FB36CA51F1B67B100A4F9D7 /* XyFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XyFieldView.h; path = src/XYfield/XyFieldView.h; sourceTree = "<group>"; };
 		6FB36CA61F1B67B100A4F9D7 /* XyFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XyFieldView.m; path = src/XYfield/XyFieldView.m; sourceTree = "<group>"; };
-		6FB36CA81F1B7BE000A4F9D7 /* XyFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XyFieldView.xib; path = src/XYfield/XyFieldView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,8 +265,12 @@
 				6F91E5881ECC4A1A0031A09D /* WorkspaceCommon.m */,
 				6F05C8111EB353180048CD18 /* WorkspaceViewController.h */,
 				6F05C8121EB353180048CD18 /* WorkspaceViewController.m */,
+				6F10F4C31F1CAF3700159000 /* WorkspaceView.h */,
+				6F10F4C41F1CAF3700159000 /* WorkspaceView.m */,
 				6F4D4DA51EB4DB5F00A0DC69 /* FXWorkspaceViewController.h */,
 				6F4D4DA61EB4DB5F00A0DC69 /* FXWorkspaceViewController.m */,
+				6F10F4C61F1CAF6B00159000 /* FXWorkspaceView.h */,
+				6F10F4C71F1CAF6B00159000 /* FXWorkspaceView.m */,
 			);
 			name = Workspace;
 			sourceTree = "<group>";
@@ -285,7 +298,9 @@
 			children = (
 				6FB36CA51F1B67B100A4F9D7 /* XyFieldView.h */,
 				6FB36CA61F1B67B100A4F9D7 /* XyFieldView.m */,
-				6FB36CA81F1B7BE000A4F9D7 /* XyFieldView.xib */,
+				6F10F4CB1F1CB8F700159000 /* XyFieldContainerView.h */,
+				6F10F4CC1F1CB8F700159000 /* XyFieldContainerView.m */,
+				6F10F4C91F1CB8DA00159000 /* XyFieldContainerView.xib */,
 			);
 			name = XYfield;
 			sourceTree = "<group>";
@@ -402,6 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F10F4CA1F1CB8DA00159000 /* XyFieldContainerView.xib in Resources */,
 				6F05C7B71EB0F02A0048CD18 /* LaunchScreen.storyboard in Resources */,
 				6F05C8011EB23BFA0048CD18 /* test06.jpg in Resources */,
 				6F05C7B41EB0F02A0048CD18 /* Assets.xcassets in Resources */,
@@ -418,7 +434,6 @@
 				6F05C7FD1EB23BFA0048CD18 /* test02.jpg in Resources */,
 				6F05C7FE1EB23BFA0048CD18 /* test03.jpg in Resources */,
 				6F05C8001EB23BFA0048CD18 /* test05.jpg in Resources */,
-				6FB36CA91F1B7BE000A4F9D7 /* XyFieldView.xib in Resources */,
 				6F05C8021EB23BFA0048CD18 /* test07.jpg in Resources */,
 				6F05C8081EB23BFA0048CD18 /* test13.jpg in Resources */,
 				6F05C8041EB23BFA0048CD18 /* test09.jpg in Resources */,
@@ -450,9 +465,12 @@
 				6F91E5891ECC4A1A0031A09D /* WorkspaceCommon.m in Sources */,
 				6F05C81A1EB354BA0048CD18 /* MainMenu.m in Sources */,
 				6F05C8131EB353180048CD18 /* WorkspaceViewController.m in Sources */,
+				6F10F4C81F1CAF6B00159000 /* FXWorkspaceView.m in Sources */,
+				6F10F4CD1F1CB8F700159000 /* XyFieldContainerView.m in Sources */,
 				6F05C7B21EB0F02A0048CD18 /* Quantenguerilla.xcdatamodeld in Sources */,
 				6F4D4DA41EB4C2CD00A0DC69 /* NewWorkspaceViewController.m in Sources */,
 				6F4D4DA71EB4DB5F00A0DC69 /* FXWorkspaceViewController.m in Sources */,
+				6F10F4C51F1CAF3700159000 /* WorkspaceView.m in Sources */,
 				6F05C8221EB385390048CD18 /* Project.m in Sources */,
 				6F05C81F1EB354C90048CD18 /* AppDelegate.m in Sources */,
 				6F4D4DAB1EB51AE100A0DC69 /* RMPZoomTransitionAnimator.m in Sources */,
