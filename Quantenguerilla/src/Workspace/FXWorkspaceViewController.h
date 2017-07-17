@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WorkspaceCommon.h"
 #import "XyFieldContainerView.h"
+#import "FaderContainerView.h"
 
 @class FXWorkspaceViewController;   // todo - erben von WorkspaceViewController????
 
@@ -26,6 +27,12 @@
 @property (weak, nonatomic) IBOutlet XyFieldContainerView *xyFieldContainerView2;
 @property (weak, nonatomic) IBOutlet XyFieldContainerView *xyFieldContainerView3;
 @property (weak, nonatomic) IBOutlet XyFieldContainerView *xyFieldContainerView4;
+
+@property (weak, nonatomic) IBOutlet FaderContainerView *faderContainerView1;
+@property (weak, nonatomic) IBOutlet FaderContainerView *faderContainerView2;
+@property (weak, nonatomic) IBOutlet FaderContainerView *faderContainerView3;
+@property (weak, nonatomic) IBOutlet FaderContainerView *faderContainerView4;
+
 
 @property (weak, nonatomic) IBOutlet UITextField *projectNameTextField;
 

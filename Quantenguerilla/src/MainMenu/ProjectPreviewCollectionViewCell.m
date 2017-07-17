@@ -11,11 +11,17 @@
 @implementation ProjectPreviewCollectionViewCell
 
 
+- (UIButton *) deleteButton {
+    if(!_deleteButton) {
+        _deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(259, 5, 45, 30)];
+        [self.contentView addSubview:_deleteButton];
+    }
+    return _deleteButton;
+}
+
 // Lazy loading of the imageView
 - (UIImageView *) imageView {
     if (!_imageView) {
-//        CGFloat x = self.frame.origin.x+64;
-//        CGFloat y = self.frame.origin.y+20;
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(45,30,237,158)];//(64, 20, 264, 198)];
         [self.contentView addSubview:_imageView];
     }
@@ -24,8 +30,6 @@
 
 - (UILabel*) projectName {
     if (!_projectName) {
-//        CGFloat x = self.frame.origin.x+20;
-//        CGFloat y = self.frame.origin.y+226;
         _projectName = [[UILabel alloc] initWithFrame:CGRectMake(45,185,237,48)];//(20, 226, 352, 48)];
         _projectName.textAlignment = NSTextAlignmentCenter;
         _projectName.textColor = [UIColor whiteColor];
@@ -43,5 +47,6 @@
     _imageView = nil;
     _projectName = nil;
 }
+
 
 @end

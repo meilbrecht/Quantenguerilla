@@ -26,8 +26,19 @@
     [self.view addSubview:_xyFieldContainerView1];
     [_xyFieldContainerView2 initializeSubviews];
     [self.view addSubview:_xyFieldContainerView2];
+    
     [_fingerboardContainerView initializeSubviews];
     [self.view addSubview:_fingerboardContainerView];
+    
+    [_controllerGroupView1 initializeSubviews];
+    [self.view addSubview:_controllerGroupView1];
+    [_controllerGroupView2 initializeSubviews];
+    [self.view addSubview:_controllerGroupView2];
+    
+    [_faderContainerView1 initializeSubviews];
+    [_controllerGroupView1 addSubview:_faderContainerView1];
+    [_faderContainerView2 initializeSubviews];
+    [_controllerGroupView2 addSubview:_faderContainerView2];
 }
 
 - (void)didReceiveMemoryWarning {

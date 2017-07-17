@@ -81,6 +81,12 @@
     
     ProjectPreviewCollectionViewCell* cell=[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     cell.backgroundColor=[UIColor blackColor];
+    if(_bEditMode) {
+        cell.deleteButton.hidden = false;
+        [self.view bringSubviewToFront:cell.deleteButton];
+    } else {
+        cell.deleteButton.hidden = true;
+    }
     
     if(([indexPath row])<[_mainmenu.projects count]) {
         Project *project = [_mainmenu.projects objectAtIndex:([indexPath row])];
@@ -89,11 +95,12 @@
             [cell projectName];
         }
         cell.projectName.text = project.title;
-        NSLog(@"title: %@", project.title);
+        //NSLog(@"title: %@", project.title);
     }
     [self calcNumberOfPages];
     return cell;
 }
+
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -360,7 +367,7 @@
             
                 NSIndexPath *indexPath = [_menuGridCollectionView indexPathForItemAtPoint:[gesture locationInView:_menuGridCollectionView]];
             
-                NSLog(@"long gesture on %ld began", (long)indexPath.row);
+                //NSLog(@"long gesture on %ld began", (long)indexPath.row);
             
                 if(_bEditMode) {
                     // forbid item being last element ('+' always!!!)
@@ -383,7 +390,7 @@
        
         case UIGestureRecognizerStateChanged: {
             
-                NSLog(@"long gesture changed");
+                //NSLog(@"long gesture changed");
             
                 if(_mainmenu.dndIndex >= [_mainmenu.projects count]) {
                     break;
@@ -397,7 +404,7 @@
         
         case UIGestureRecognizerStateEnded: {
             
-                NSLog(@"long gesture on ended");
+                //NSLog(@"long gesture on ended");
             
                 if(_mainmenu.dndIndex >= [_mainmenu.projects count]) {
                     break;
@@ -444,6 +451,33 @@
 }
 
 
+#pragma mark - altert message
+
+-(void)showAlertMessage:(NSString*)message withTitle:(NSString *)title {
+    
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:title
+                                  message:message
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        
+        //do something when click button
+        NSLog(@"yes, kill that project! it sucks like hell!");
+        // todo - call delete function, remove all setting and screenshot files
+    }];
+    [alert addAction:yesAction];
+    UIAlertAction *noAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        
+        //do something when click button
+        NSLog(@"nope. let's keep it.");
+    }];
+    [alert addAction:noAction];
+    
+    UIViewController *vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    [vc presentViewController:alert animated:YES completion:nil];
+}
+    
 
 #pragma mark - other ui actions
 
@@ -460,7 +494,18 @@
         _bEditMode = true;
         [btn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     }
+    [_menuGridCollectionView reloadData];
 }
+
+- (IBAction)deleteButtonPressed:(id)sender {
+    
+    NSIndexPath *indexPath = nil;
+    CGPoint location = [sender convertPoint:CGPointZero toView:_menuGridCollectionView];
+    indexPath = [_menuGridCollectionView indexPathForItemAtPoint:location];
+    NSLog(@"Delete project %ld", (long)[indexPath row]);
+    [self showAlertMessage:@"Are you sure that you want to permanently delete the workspace?" withTitle:@"Deleting Workspace"];
+}
+
 
 
 @end

@@ -10,6 +10,8 @@
 #import "WorkspaceCommon.h"
 #import "XyFieldContainerView.h"
 #import "FingerboardContainerView.h"
+#import "ControllerGroupContainerView.h"
+#import "FaderContainerView.h"
 
 @class WorkspaceViewController;
 
@@ -23,9 +25,18 @@
 
 @property (nonatomic, strong) WorkspaceCommon *workspace;
 
-@property (weak, nonatomic) IBOutlet FingerboardContainerView *fingerboardContainerView;
 @property (weak, nonatomic) IBOutlet XyFieldContainerView *xyFieldContainerView1;
 @property (weak, nonatomic) IBOutlet XyFieldContainerView *xyFieldContainerView2;
+
+@property (weak, nonatomic) IBOutlet FingerboardContainerView *fingerboardContainerView;
+@property (weak, nonatomic) IBOutlet ControllerGroupContainerView *controllerGroupView1;
+@property (weak, nonatomic) IBOutlet ControllerGroupContainerView *controllerGroupView2;
+@property (weak, nonatomic) IBOutlet FaderContainerView *faderContainerView1;
+@property (weak, nonatomic) IBOutlet FaderContainerView *faderContainerView2;
+
+
+
+
 @property (weak, nonatomic) IBOutlet UITextField *projectNameTextField;
 
 - (void) setProject:(Project*)project;

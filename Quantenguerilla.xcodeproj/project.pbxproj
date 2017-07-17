@@ -25,11 +25,6 @@
 		6F05C8041EB23BFA0048CD18 /* test09.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F05C7F41EB23BFA0048CD18 /* test09.jpg */; };
 		6F05C8051EB23BFA0048CD18 /* test10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F05C7F51EB23BFA0048CD18 /* test10.jpg */; };
 		6F05C8061EB23BFA0048CD18 /* test11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F05C7F61EB23BFA0048CD18 /* test11.jpg */; };
-		6F05C8071EB23BFA0048CD18 /* test12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F05C7F71EB23BFA0048CD18 /* test12.jpg */; };
-		6F05C8081EB23BFA0048CD18 /* test13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F05C7F81EB23BFA0048CD18 /* test13.jpg */; };
-		6F05C8091EB23BFA0048CD18 /* test14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F05C7F91EB23BFA0048CD18 /* test14.jpg */; };
-		6F05C80A1EB23BFA0048CD18 /* test15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F05C7FA1EB23BFA0048CD18 /* test15.jpg */; };
-		6F05C80B1EB23BFA0048CD18 /* test16.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F05C7FB1EB23BFA0048CD18 /* test16.jpg */; };
 		6F05C80F1EB2403E0048CD18 /* plus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F05C80E1EB2403E0048CD18 /* plus.jpg */; };
 		6F05C8131EB353180048CD18 /* WorkspaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F05C8121EB353180048CD18 /* WorkspaceViewController.m */; };
 		6F05C81A1EB354BA0048CD18 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F05C8151EB354BA0048CD18 /* MainMenu.m */; };
@@ -44,6 +39,11 @@
 		6F10F4D31F1D02EE00159000 /* FingerboardContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10F4D21F1D02EE00159000 /* FingerboardContainerView.m */; };
 		6F10F4D51F1D030800159000 /* FingerboardContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F10F4D41F1D030800159000 /* FingerboardContainerView.xib */; };
 		6F10F4D81F1D036400159000 /* FingerboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10F4D71F1D036400159000 /* FingerboardView.m */; };
+		6F10F4DC1F1D0C2B00159000 /* FaderContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10F4DB1F1D0C2B00159000 /* FaderContainerView.m */; };
+		6F10F4DF1F1D0C3D00159000 /* FaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10F4DE1F1D0C3D00159000 /* FaderView.m */; };
+		6F10F4E11F1D0C5700159000 /* FaderContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F10F4E01F1D0C5700159000 /* FaderContainerView.xib */; };
+		6F10F4E51F1D1AD600159000 /* ControllerGroupContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10F4E41F1D1AD600159000 /* ControllerGroupContainerView.m */; };
+		6F10F4EA1F1D1B0B00159000 /* ControllerGroupContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F10F4E91F1D1B0B00159000 /* ControllerGroupContainerView.xib */; };
 		6F4D4DA41EB4C2CD00A0DC69 /* NewWorkspaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D4DA31EB4C2CD00A0DC69 /* NewWorkspaceViewController.m */; };
 		6F4D4DA71EB4DB5F00A0DC69 /* FXWorkspaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D4DA61EB4DB5F00A0DC69 /* FXWorkspaceViewController.m */; };
 		6F4D4DAB1EB51AE100A0DC69 /* RMPZoomTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D4DAA1EB51AE100A0DC69 /* RMPZoomTransitionAnimator.m */; };
@@ -93,11 +93,6 @@
 		6F05C7F41EB23BFA0048CD18 /* test09.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test09.jpg; path = img/test09.jpg; sourceTree = "<group>"; };
 		6F05C7F51EB23BFA0048CD18 /* test10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test10.jpg; path = img/test10.jpg; sourceTree = "<group>"; };
 		6F05C7F61EB23BFA0048CD18 /* test11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test11.jpg; path = img/test11.jpg; sourceTree = "<group>"; };
-		6F05C7F71EB23BFA0048CD18 /* test12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test12.jpg; path = img/test12.jpg; sourceTree = "<group>"; };
-		6F05C7F81EB23BFA0048CD18 /* test13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test13.jpg; path = img/test13.jpg; sourceTree = "<group>"; };
-		6F05C7F91EB23BFA0048CD18 /* test14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test14.jpg; path = img/test14.jpg; sourceTree = "<group>"; };
-		6F05C7FA1EB23BFA0048CD18 /* test15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test15.jpg; path = img/test15.jpg; sourceTree = "<group>"; };
-		6F05C7FB1EB23BFA0048CD18 /* test16.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test16.jpg; path = img/test16.jpg; sourceTree = "<group>"; };
 		6F05C80E1EB2403E0048CD18 /* plus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plus.jpg; sourceTree = "<group>"; };
 		6F05C8111EB353180048CD18 /* WorkspaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkspaceViewController.h; path = src/Workspace/WorkspaceViewController.h; sourceTree = "<group>"; };
 		6F05C8121EB353180048CD18 /* WorkspaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkspaceViewController.m; path = src/Workspace/WorkspaceViewController.m; sourceTree = "<group>"; };
@@ -123,6 +118,14 @@
 		6F10F4D41F1D030800159000 /* FingerboardContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FingerboardContainerView.xib; path = src/Fingerboard/FingerboardContainerView.xib; sourceTree = "<group>"; };
 		6F10F4D61F1D036400159000 /* FingerboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FingerboardView.h; path = src/Fingerboard/FingerboardView.h; sourceTree = "<group>"; };
 		6F10F4D71F1D036400159000 /* FingerboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FingerboardView.m; path = src/Fingerboard/FingerboardView.m; sourceTree = "<group>"; };
+		6F10F4DA1F1D0C2B00159000 /* FaderContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaderContainerView.h; path = src/Fader/FaderContainerView.h; sourceTree = "<group>"; };
+		6F10F4DB1F1D0C2B00159000 /* FaderContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FaderContainerView.m; path = src/Fader/FaderContainerView.m; sourceTree = "<group>"; };
+		6F10F4DD1F1D0C3D00159000 /* FaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaderView.h; path = src/Fader/FaderView.h; sourceTree = "<group>"; };
+		6F10F4DE1F1D0C3D00159000 /* FaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FaderView.m; path = src/Fader/FaderView.m; sourceTree = "<group>"; };
+		6F10F4E01F1D0C5700159000 /* FaderContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaderContainerView.xib; sourceTree = "<group>"; };
+		6F10F4E31F1D1AD600159000 /* ControllerGroupContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControllerGroupContainerView.h; path = src/ControllerGroup/ControllerGroupContainerView.h; sourceTree = "<group>"; };
+		6F10F4E41F1D1AD600159000 /* ControllerGroupContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ControllerGroupContainerView.m; path = src/ControllerGroup/ControllerGroupContainerView.m; sourceTree = "<group>"; };
+		6F10F4E91F1D1B0B00159000 /* ControllerGroupContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ControllerGroupContainerView.xib; path = src/ControllerGroup/ControllerGroupContainerView.xib; sourceTree = "<group>"; };
 		6F4D4DA21EB4C2CD00A0DC69 /* NewWorkspaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewWorkspaceViewController.h; path = src/MainMenu/NewWorkspaceViewController.h; sourceTree = "<group>"; };
 		6F4D4DA31EB4C2CD00A0DC69 /* NewWorkspaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewWorkspaceViewController.m; path = src/MainMenu/NewWorkspaceViewController.m; sourceTree = "<group>"; };
 		6F4D4DA51EB4DB5F00A0DC69 /* FXWorkspaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FXWorkspaceViewController.h; path = src/Workspace/FXWorkspaceViewController.h; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 		6F05C7A31EB0F02A0048CD18 /* Quantenguerilla */ = {
 			isa = PBXGroup;
 			children = (
+				6F10F4E21F1D1A8B00159000 /* ControllerGroup */,
+				6F10F4D91F1D0B5E00159000 /* Fader */,
 				6F10F4CE1F1D026200159000 /* Fingerboard */,
 				6FB36CA01F1B65CD00A4F9D7 /* XYfield */,
 				6F4D4DA81EB51AA400A0DC69 /* RMPZoomTransitionAnimator */,
@@ -243,11 +248,6 @@
 				6F05C7F41EB23BFA0048CD18 /* test09.jpg */,
 				6F05C7F51EB23BFA0048CD18 /* test10.jpg */,
 				6F05C7F61EB23BFA0048CD18 /* test11.jpg */,
-				6F05C7F71EB23BFA0048CD18 /* test12.jpg */,
-				6F05C7F81EB23BFA0048CD18 /* test13.jpg */,
-				6F05C7F91EB23BFA0048CD18 /* test14.jpg */,
-				6F05C7FA1EB23BFA0048CD18 /* test15.jpg */,
-				6F05C7FB1EB23BFA0048CD18 /* test16.jpg */,
 			);
 			name = img;
 			sourceTree = "<group>";
@@ -303,6 +303,28 @@
 				6F10F4D41F1D030800159000 /* FingerboardContainerView.xib */,
 			);
 			name = Fingerboard;
+			sourceTree = "<group>";
+		};
+		6F10F4D91F1D0B5E00159000 /* Fader */ = {
+			isa = PBXGroup;
+			children = (
+				6F10F4DD1F1D0C3D00159000 /* FaderView.h */,
+				6F10F4DE1F1D0C3D00159000 /* FaderView.m */,
+				6F10F4DA1F1D0C2B00159000 /* FaderContainerView.h */,
+				6F10F4DB1F1D0C2B00159000 /* FaderContainerView.m */,
+				6F10F4E01F1D0C5700159000 /* FaderContainerView.xib */,
+			);
+			name = Fader;
+			sourceTree = "<group>";
+		};
+		6F10F4E21F1D1A8B00159000 /* ControllerGroup */ = {
+			isa = PBXGroup;
+			children = (
+				6F10F4E31F1D1AD600159000 /* ControllerGroupContainerView.h */,
+				6F10F4E41F1D1AD600159000 /* ControllerGroupContainerView.m */,
+				6F10F4E91F1D1B0B00159000 /* ControllerGroupContainerView.xib */,
+			);
+			name = ControllerGroup;
 			sourceTree = "<group>";
 		};
 		6F4D4DA81EB51AA400A0DC69 /* RMPZoomTransitionAnimator */ = {
@@ -438,17 +460,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F10F4EA1F1D1B0B00159000 /* ControllerGroupContainerView.xib in Resources */,
 				6F10F4CA1F1CB8DA00159000 /* XyFieldContainerView.xib in Resources */,
 				6F05C7B71EB0F02A0048CD18 /* LaunchScreen.storyboard in Resources */,
 				6F05C8011EB23BFA0048CD18 /* test06.jpg in Resources */,
 				6F05C7B41EB0F02A0048CD18 /* Assets.xcassets in Resources */,
-				6F05C80A1EB23BFA0048CD18 /* test15.jpg in Resources */,
-				6F05C8071EB23BFA0048CD18 /* test12.jpg in Resources */,
 				6F10F4D51F1D030800159000 /* FingerboardContainerView.xib in Resources */,
 				6F05C7FF1EB23BFA0048CD18 /* test04.jpg in Resources */,
-				6F05C8091EB23BFA0048CD18 /* test14.jpg in Resources */,
+				6F10F4E11F1D0C5700159000 /* FaderContainerView.xib in Resources */,
 				6F05C8051EB23BFA0048CD18 /* test10.jpg in Resources */,
-				6F05C80B1EB23BFA0048CD18 /* test16.jpg in Resources */,
 				6F05C7FC1EB23BFA0048CD18 /* test01.jpg in Resources */,
 				6F05C8031EB23BFA0048CD18 /* test08.jpg in Resources */,
 				6F05C80F1EB2403E0048CD18 /* plus.jpg in Resources */,
@@ -457,7 +477,6 @@
 				6F05C7FE1EB23BFA0048CD18 /* test03.jpg in Resources */,
 				6F05C8001EB23BFA0048CD18 /* test05.jpg in Resources */,
 				6F05C8021EB23BFA0048CD18 /* test07.jpg in Resources */,
-				6F05C8081EB23BFA0048CD18 /* test13.jpg in Resources */,
 				6F05C8041EB23BFA0048CD18 /* test09.jpg in Resources */,
 				6F05C7AF1EB0F02A0048CD18 /* Main.storyboard in Resources */,
 			);
@@ -484,6 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F10F4E51F1D1AD600159000 /* ControllerGroupContainerView.m in Sources */,
 				6F10F4D81F1D036400159000 /* FingerboardView.m in Sources */,
 				6F10F4D31F1D02EE00159000 /* FingerboardContainerView.m in Sources */,
 				6F91E5891ECC4A1A0031A09D /* WorkspaceCommon.m in Sources */,
@@ -495,6 +515,7 @@
 				6F4D4DA41EB4C2CD00A0DC69 /* NewWorkspaceViewController.m in Sources */,
 				6F4D4DA71EB4DB5F00A0DC69 /* FXWorkspaceViewController.m in Sources */,
 				6F10F4C51F1CAF3700159000 /* WorkspaceView.m in Sources */,
+				6F10F4DF1F1D0C3D00159000 /* FaderView.m in Sources */,
 				6F05C8221EB385390048CD18 /* Project.m in Sources */,
 				6F05C81F1EB354C90048CD18 /* AppDelegate.m in Sources */,
 				6F4D4DAB1EB51AE100A0DC69 /* RMPZoomTransitionAnimator.m in Sources */,
@@ -502,6 +523,7 @@
 				6F05C81C1EB354BA0048CD18 /* ProjectPreviewCollectionViewCell.m in Sources */,
 				6FB36CA71F1B67B100A4F9D7 /* XyFieldView.m in Sources */,
 				6F05C7A61EB0F02A0048CD18 /* main.m in Sources */,
+				6F10F4DC1F1D0C2B00159000 /* FaderContainerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

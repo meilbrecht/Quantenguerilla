@@ -27,6 +27,15 @@
     [self.view addSubview:_xyFieldContainerView3];
     [_xyFieldContainerView4 initializeSubviews];
     [self.view addSubview:_xyFieldContainerView4];
+    
+    [_faderContainerView1 initializeSubviews];
+    [self.view addSubview:_faderContainerView1];
+    [_faderContainerView2 initializeSubviews];
+    [self.view addSubview:_faderContainerView2];
+    [_faderContainerView3 initializeSubviews];
+    [self.view addSubview:_faderContainerView3];
+    [_faderContainerView4 initializeSubviews];
+    [self.view addSubview:_faderContainerView4];
 }
 
 - (void)didReceiveMemoryWarning {
