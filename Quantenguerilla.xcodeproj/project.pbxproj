@@ -44,6 +44,7 @@
 		6F10F4E11F1D0C5700159000 /* FaderContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F10F4E01F1D0C5700159000 /* FaderContainerView.xib */; };
 		6F10F4E51F1D1AD600159000 /* ControllerGroupContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10F4E41F1D1AD600159000 /* ControllerGroupContainerView.m */; };
 		6F10F4EA1F1D1B0B00159000 /* ControllerGroupContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F10F4E91F1D1B0B00159000 /* ControllerGroupContainerView.xib */; };
+		6F10F4ED1F1D47BC00159000 /* FlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10F4EC1F1D47BC00159000 /* FlowLayout.m */; };
 		6F4D4DA41EB4C2CD00A0DC69 /* NewWorkspaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D4DA31EB4C2CD00A0DC69 /* NewWorkspaceViewController.m */; };
 		6F4D4DA71EB4DB5F00A0DC69 /* FXWorkspaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D4DA61EB4DB5F00A0DC69 /* FXWorkspaceViewController.m */; };
 		6F4D4DAB1EB51AE100A0DC69 /* RMPZoomTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D4DAA1EB51AE100A0DC69 /* RMPZoomTransitionAnimator.m */; };
@@ -126,6 +127,8 @@
 		6F10F4E31F1D1AD600159000 /* ControllerGroupContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControllerGroupContainerView.h; path = src/ControllerGroup/ControllerGroupContainerView.h; sourceTree = "<group>"; };
 		6F10F4E41F1D1AD600159000 /* ControllerGroupContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ControllerGroupContainerView.m; path = src/ControllerGroup/ControllerGroupContainerView.m; sourceTree = "<group>"; };
 		6F10F4E91F1D1B0B00159000 /* ControllerGroupContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ControllerGroupContainerView.xib; path = src/ControllerGroup/ControllerGroupContainerView.xib; sourceTree = "<group>"; };
+		6F10F4EB1F1D47BC00159000 /* FlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlowLayout.h; path = src/MainMenu/FlowLayout.h; sourceTree = "<group>"; };
+		6F10F4EC1F1D47BC00159000 /* FlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlowLayout.m; path = src/MainMenu/FlowLayout.m; sourceTree = "<group>"; };
 		6F4D4DA21EB4C2CD00A0DC69 /* NewWorkspaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewWorkspaceViewController.h; path = src/MainMenu/NewWorkspaceViewController.h; sourceTree = "<group>"; };
 		6F4D4DA31EB4C2CD00A0DC69 /* NewWorkspaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewWorkspaceViewController.m; path = src/MainMenu/NewWorkspaceViewController.m; sourceTree = "<group>"; };
 		6F4D4DA51EB4DB5F00A0DC69 /* FXWorkspaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FXWorkspaceViewController.h; path = src/Workspace/FXWorkspaceViewController.h; sourceTree = "<group>"; };
@@ -263,6 +266,8 @@
 				6F05C8191EB354BA0048CD18 /* ProjectPreviewCollectionViewCell.m */,
 				6F4D4DA21EB4C2CD00A0DC69 /* NewWorkspaceViewController.h */,
 				6F4D4DA31EB4C2CD00A0DC69 /* NewWorkspaceViewController.m */,
+				6F10F4EB1F1D47BC00159000 /* FlowLayout.h */,
+				6F10F4EC1F1D47BC00159000 /* FlowLayout.m */,
 			);
 			name = MainMenu;
 			sourceTree = "<group>";
@@ -512,6 +517,7 @@
 				6F10F4C81F1CAF6B00159000 /* FXWorkspaceView.m in Sources */,
 				6F10F4CD1F1CB8F700159000 /* XyFieldContainerView.m in Sources */,
 				6F05C7B21EB0F02A0048CD18 /* Quantenguerilla.xcdatamodeld in Sources */,
+				6F10F4ED1F1D47BC00159000 /* FlowLayout.m in Sources */,
 				6F4D4DA41EB4C2CD00A0DC69 /* NewWorkspaceViewController.m in Sources */,
 				6F4D4DA71EB4DB5F00A0DC69 /* FXWorkspaceViewController.m in Sources */,
 				6F10F4C51F1CAF3700159000 /* WorkspaceView.m in Sources */,

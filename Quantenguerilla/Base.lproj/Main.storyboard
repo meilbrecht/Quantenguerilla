@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="1" id="edF-Am-osa">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="1" id="edF-Am-osa" customClass="FlowLayout">
                                     <size key="itemSize" width="327" height="232"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -121,6 +121,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="SEe-Jo-qea"/>
                     <connections>
+                        <outlet property="flowLayout" destination="edF-Am-osa" id="1HW-zK-JLS"/>
                         <outlet property="menuGridCollectionView" destination="5pg-VX-vs1" id="so5-hZ-dcU"/>
                         <outlet property="pageControl" destination="DIM-Hz-1fA" id="Zre-TL-ywB"/>
                         <segue destination="W5r-66-qyC" kind="presentation" identifier="workspaceSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="odx-qU-WPG"/>

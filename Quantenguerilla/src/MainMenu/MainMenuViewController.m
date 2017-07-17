@@ -46,13 +46,15 @@
     [_menuGridCollectionView registerClass:[ProjectPreviewCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     [_menuGridCollectionView setBackgroundColor:[UIColor blackColor]];
     
-    _flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    _flowLayout = [[FlowLayout alloc] init];
     //[_flowLayout setItemSize:_menuGridCollectionView.itemSize];
     [_flowLayout setItemSize:CGSizeMake(324,224)];
     [_flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     [_menuGridCollectionView setBounces:NO];
     [_menuGridCollectionView setCollectionViewLayout:_flowLayout];
     _menuGridCollectionView.pagingEnabled = true;
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 #pragma mark - UICollectionView DataSource
@@ -132,6 +134,7 @@
     
     CGFloat pageWidth = _menuGridCollectionView.frame.size.width;
     float currentPage = _menuGridCollectionView.contentOffset.x / pageWidth;
+    NSLog(@"MainMenuViewController: scrollViewDidEndDecelerating");
     
     if (0.0f != fmodf(currentPage, 1.0f)) {
         _pageControl.currentPage = currentPage + 1;
@@ -145,6 +148,7 @@
     
     CGFloat pageWidth = _menuGridCollectionView.frame.size.width;
     float currentPage = _menuGridCollectionView.contentOffset.x / pageWidth;
+    NSLog(@"MainMenuViewController: scrollViewDidScroll");
     
     if (0.0f != fmodf(currentPage, 1.0f)) {
         _pageControl.currentPage = currentPage + 1;
@@ -419,6 +423,7 @@
                         [_mainmenu reorderProjects];
                         [_menuGridCollectionView endInteractiveMovement];
                     } else {
+                        // todo - does not work!! check falid position also in flow layout!?
                         NSLog(@"MainMenuViewController: drag & drop canceled - invalid position");
                         [_menuGridCollectionView cancelInteractiveMovement];
                     }
@@ -445,7 +450,9 @@
     
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongGesture:)]
     ;
+    [lpgr addTarget:_flowLayout action:@selector(handlePanGesture:)];
     [_menuGridCollectionView addGestureRecognizer:lpgr];
+
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
     [_menuGridCollectionView addGestureRecognizer:tgr];
 }

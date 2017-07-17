@@ -12,12 +12,13 @@
 #import "NewWorkspaceViewController.h"
 #import "WorkspaceViewController.h"
 #import "FXWorkspaceViewController.h"
+#import "FlowLayout.h"
 
 @interface MainMenuViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, NewWorkspaceDelegate, WorkspaceDelegate, FXWorkspaceDelegate, RMPZoomTransitionAnimating>
 
 @property (strong, nonatomic) MainMenu *mainmenu;
 @property (strong, nonatomic) IBOutlet UICollectionView *menuGridCollectionView;
-@property (strong, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
+@property (strong, nonatomic) IBOutlet FlowLayout *flowLayout;
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @property (nonatomic) NSIndexPath *selectedItemIndexPath;
