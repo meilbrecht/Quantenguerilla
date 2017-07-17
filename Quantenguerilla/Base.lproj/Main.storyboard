@@ -139,12 +139,12 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L73-wK-8hk" customClass="XyFieldContainerView">
-                                <rect key="frame" x="20" y="58" width="380" height="320"/>
+                                <rect key="frame" x="20" y="58" width="380" height="340"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rfT-aJ-WZs" customClass="XyFieldContainerView">
-                                <rect key="frame" x="624" y="58" width="380" height="320"/>
+                                <rect key="frame" x="624" y="58" width="380" height="340"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -156,10 +156,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uAv-f7-pfz" customClass="FingerboardContainerView">
+                                <rect key="frame" x="20" y="416" width="984" height="340"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="fingerboardContainerView" destination="uAv-f7-pfz" id="hvx-I3-vZn"/>
                         <outlet property="projectNameTextField" destination="9jm-7x-wom" id="4WA-hB-EN3"/>
                         <outlet property="xyFieldContainerView1" destination="L73-wK-8hk" id="GCP-YL-mSO"/>
                         <outlet property="xyFieldContainerView2" destination="rfT-aJ-WZs" id="eYA-2u-7ka"/>
@@ -255,22 +261,22 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YaT-aC-e88" customClass="XyFieldContainerView">
-                                <rect key="frame" x="20" y="58" width="380" height="320"/>
+                                <rect key="frame" x="20" y="58" width="380" height="340"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cKk-09-TnM" customClass="XyFieldContainerView">
-                                <rect key="frame" x="624" y="58" width="380" height="320"/>
+                                <rect key="frame" x="624" y="58" width="380" height="340"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7o-Uy-o9L" customClass="XyFieldContainerView">
-                                <rect key="frame" x="20" y="416" width="380" height="320"/>
+                                <rect key="frame" x="20" y="416" width="380" height="340"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hua-6M-KgZ" customClass="XyFieldContainerView">
-                                <rect key="frame" x="624" y="416" width="380" height="320"/>
+                                <rect key="frame" x="624" y="416" width="380" height="340"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>

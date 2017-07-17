@@ -26,8 +26,8 @@
     [self.view addSubview:_xyFieldContainerView1];
     [_xyFieldContainerView2 initializeSubviews];
     [self.view addSubview:_xyFieldContainerView2];
-    
-    //[self.view addSubview:_xyFieldContainerView2];
+    [_fingerboardContainerView initializeSubviews];
+    [self.view addSubview:_fingerboardContainerView];
 }
 
 - (void)didReceiveMemoryWarning {

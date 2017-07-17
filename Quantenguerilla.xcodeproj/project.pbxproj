@@ -41,6 +41,9 @@
 		6F10F4C81F1CAF6B00159000 /* FXWorkspaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10F4C71F1CAF6B00159000 /* FXWorkspaceView.m */; };
 		6F10F4CA1F1CB8DA00159000 /* XyFieldContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F10F4C91F1CB8DA00159000 /* XyFieldContainerView.xib */; };
 		6F10F4CD1F1CB8F700159000 /* XyFieldContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10F4CC1F1CB8F700159000 /* XyFieldContainerView.m */; };
+		6F10F4D31F1D02EE00159000 /* FingerboardContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10F4D21F1D02EE00159000 /* FingerboardContainerView.m */; };
+		6F10F4D51F1D030800159000 /* FingerboardContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F10F4D41F1D030800159000 /* FingerboardContainerView.xib */; };
+		6F10F4D81F1D036400159000 /* FingerboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10F4D71F1D036400159000 /* FingerboardView.m */; };
 		6F4D4DA41EB4C2CD00A0DC69 /* NewWorkspaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D4DA31EB4C2CD00A0DC69 /* NewWorkspaceViewController.m */; };
 		6F4D4DA71EB4DB5F00A0DC69 /* FXWorkspaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D4DA61EB4DB5F00A0DC69 /* FXWorkspaceViewController.m */; };
 		6F4D4DAB1EB51AE100A0DC69 /* RMPZoomTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D4DAA1EB51AE100A0DC69 /* RMPZoomTransitionAnimator.m */; };
@@ -115,6 +118,11 @@
 		6F10F4C91F1CB8DA00159000 /* XyFieldContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XyFieldContainerView.xib; path = src/XYfield/XyFieldContainerView.xib; sourceTree = "<group>"; };
 		6F10F4CB1F1CB8F700159000 /* XyFieldContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XyFieldContainerView.h; path = src/XYfield/XyFieldContainerView.h; sourceTree = "<group>"; };
 		6F10F4CC1F1CB8F700159000 /* XyFieldContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XyFieldContainerView.m; path = src/XYfield/XyFieldContainerView.m; sourceTree = "<group>"; };
+		6F10F4D11F1D02EE00159000 /* FingerboardContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FingerboardContainerView.h; path = src/Fingerboard/FingerboardContainerView.h; sourceTree = "<group>"; };
+		6F10F4D21F1D02EE00159000 /* FingerboardContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FingerboardContainerView.m; path = src/Fingerboard/FingerboardContainerView.m; sourceTree = "<group>"; };
+		6F10F4D41F1D030800159000 /* FingerboardContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FingerboardContainerView.xib; path = src/Fingerboard/FingerboardContainerView.xib; sourceTree = "<group>"; };
+		6F10F4D61F1D036400159000 /* FingerboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FingerboardView.h; path = src/Fingerboard/FingerboardView.h; sourceTree = "<group>"; };
+		6F10F4D71F1D036400159000 /* FingerboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FingerboardView.m; path = src/Fingerboard/FingerboardView.m; sourceTree = "<group>"; };
 		6F4D4DA21EB4C2CD00A0DC69 /* NewWorkspaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewWorkspaceViewController.h; path = src/MainMenu/NewWorkspaceViewController.h; sourceTree = "<group>"; };
 		6F4D4DA31EB4C2CD00A0DC69 /* NewWorkspaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewWorkspaceViewController.m; path = src/MainMenu/NewWorkspaceViewController.m; sourceTree = "<group>"; };
 		6F4D4DA51EB4DB5F00A0DC69 /* FXWorkspaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FXWorkspaceViewController.h; path = src/Workspace/FXWorkspaceViewController.h; sourceTree = "<group>"; };
@@ -175,6 +183,7 @@
 		6F05C7A31EB0F02A0048CD18 /* Quantenguerilla */ = {
 			isa = PBXGroup;
 			children = (
+				6F10F4CE1F1D026200159000 /* Fingerboard */,
 				6FB36CA01F1B65CD00A4F9D7 /* XYfield */,
 				6F4D4DA81EB51AA400A0DC69 /* RMPZoomTransitionAnimator */,
 				6F05C8231EB385470048CD18 /* ProjectData */,
@@ -282,6 +291,18 @@
 				6F05C8211EB385390048CD18 /* Project.m */,
 			);
 			name = ProjectData;
+			sourceTree = "<group>";
+		};
+		6F10F4CE1F1D026200159000 /* Fingerboard */ = {
+			isa = PBXGroup;
+			children = (
+				6F10F4D61F1D036400159000 /* FingerboardView.h */,
+				6F10F4D71F1D036400159000 /* FingerboardView.m */,
+				6F10F4D11F1D02EE00159000 /* FingerboardContainerView.h */,
+				6F10F4D21F1D02EE00159000 /* FingerboardContainerView.m */,
+				6F10F4D41F1D030800159000 /* FingerboardContainerView.xib */,
+			);
+			name = Fingerboard;
 			sourceTree = "<group>";
 		};
 		6F4D4DA81EB51AA400A0DC69 /* RMPZoomTransitionAnimator */ = {
@@ -423,6 +444,7 @@
 				6F05C7B41EB0F02A0048CD18 /* Assets.xcassets in Resources */,
 				6F05C80A1EB23BFA0048CD18 /* test15.jpg in Resources */,
 				6F05C8071EB23BFA0048CD18 /* test12.jpg in Resources */,
+				6F10F4D51F1D030800159000 /* FingerboardContainerView.xib in Resources */,
 				6F05C7FF1EB23BFA0048CD18 /* test04.jpg in Resources */,
 				6F05C8091EB23BFA0048CD18 /* test14.jpg in Resources */,
 				6F05C8051EB23BFA0048CD18 /* test10.jpg in Resources */,
@@ -462,6 +484,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F10F4D81F1D036400159000 /* FingerboardView.m in Sources */,
+				6F10F4D31F1D02EE00159000 /* FingerboardContainerView.m in Sources */,
 				6F91E5891ECC4A1A0031A09D /* WorkspaceCommon.m in Sources */,
 				6F05C81A1EB354BA0048CD18 /* MainMenu.m in Sources */,
 				6F05C8131EB353180048CD18 /* WorkspaceViewController.m in Sources */,

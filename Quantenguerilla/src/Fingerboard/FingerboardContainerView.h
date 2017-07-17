@@ -1,5 +1,5 @@
 //
-//  XyFieldContainerView.h
+//  FingerboardContainerView.h
 //  Quantenguerilla
 //
 //  Created by Marius Eilbrecht on 17.07.17.
@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XyFieldView.h"
+#import "FingerboardView.h"
 
-@interface XyFieldContainerView : UIView
+@interface FingerboardContainerView : UIView
 
 -(void)initializeSubviews;
 
-@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
-@property (weak, nonatomic) IBOutlet XyFieldView *xyFieldView;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
+@property (weak, nonatomic) IBOutlet FingerboardView *fingerboardView;
+
 
 @end

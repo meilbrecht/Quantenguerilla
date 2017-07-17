@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WorkspaceCommon.h"
 #import "XyFieldContainerView.h"
+#import "FingerboardContainerView.h"
 
 @class WorkspaceViewController;
 
@@ -22,6 +23,7 @@
 
 @property (nonatomic, strong) WorkspaceCommon *workspace;
 
+@property (weak, nonatomic) IBOutlet FingerboardContainerView *fingerboardContainerView;
 @property (weak, nonatomic) IBOutlet XyFieldContainerView *xyFieldContainerView1;
 @property (weak, nonatomic) IBOutlet XyFieldContainerView *xyFieldContainerView2;
 @property (weak, nonatomic) IBOutlet UITextField *projectNameTextField;
