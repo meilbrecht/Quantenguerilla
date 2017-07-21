@@ -140,5 +140,10 @@
 //    [self.navigationController pushViewController:workspaceVC animated:YES];
 }
 
+- (IBAction)backButtonPressed:(id)sender {
+    // remove the recognizer first so it's view.window is valid
+    [self.view.window removeGestureRecognizer:_tapBehindGesture];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end
